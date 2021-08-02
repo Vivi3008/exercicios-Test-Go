@@ -44,8 +44,40 @@ func TestExercicios(t *testing.T) {
 		total := CalculaCompras(listaPrecos)
 		expected := 68.396
 
-		if total != float64(expected) {
+		if total != expected {
 			t.Errorf("Resultado %.4f, valor esperado %.4f\n", total, expected)
+		}
+	})
+
+	t.Run("Ex 4 Retornar uma frase com nome e cor favorita", func(t *testing.T) {
+		result := CorFavorita("Viviane", "Roxo")
+		expected := "Meu nome é Viviane minha cor favorita é Roxo"
+
+		if result != expected {
+			t.Errorf("Resultado %s, esperado %s", result, expected)
+		}
+	})
+
+	t.Run("Ex 5 Operaçoes relacionais", func(t *testing.T) {
+		a := 35
+		b := 14
+		result := OperadorRelacional(a, b)
+		expected := true
+
+		if result != expected {
+			t.Errorf("Resultado %t, esperado %t", result, expected)
+		}
+	})
+
+	t.Run("Ex 6 Operador &&", func(t *testing.T) {
+		a := 1
+		b := 4
+		c := 3
+		result := OperadorE(a, b, c)
+		expected := "B é maior"
+
+		if result != expected {
+			t.Errorf("Resultado %s, esperado %s", result, expected)
 		}
 	})
 
