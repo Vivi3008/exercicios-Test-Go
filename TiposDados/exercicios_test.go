@@ -81,4 +81,22 @@ func TestExercicios(t *testing.T) {
 		}
 	})
 
+	t.Run("Ex. Extra 1", func(t *testing.T) {
+		result := VerifyKm(8)
+		expected := 8
+
+		if result != int32(expected) {
+			t.Errorf("Resultado %v, esperado %v", result, expected)
+		}
+	})
+
+	t.Run("Ex Extra 2", func(t *testing.T) {
+		result := CalculaAniversario(1986)
+		expected := 35
+
+		if result != expected {
+			t.Errorf("Resultado %d, esperado %d", result, expected)
+		}
+	})
+
 }

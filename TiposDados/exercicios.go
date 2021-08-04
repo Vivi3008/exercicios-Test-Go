@@ -1,5 +1,7 @@
 package tiposdados
 
+import "time"
+
 //funcoes exercicio 1
 func PrintNum(num int) int {
 	return num
@@ -52,4 +54,16 @@ func OperadorE(a, b, c int) string {
 		return "C é maior"
 	}
 	return "Nenhum"
+}
+
+//ex extra 1
+func VerifyKm(km int32) int32 {
+	return km
+}
+
+//ex extra 2
+func CalculaAniversario(anoNascimento int) int {
+	anoAtual := time.Now().Year()
+	idade := anoAtual - anoNascimento
+	return idade
 }
