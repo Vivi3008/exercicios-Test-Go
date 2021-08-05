@@ -61,7 +61,7 @@ func TestExercicios(t *testing.T) {
 	t.Run("Ex 5 Operaçoes relacionais", func(t *testing.T) {
 		a := 35
 		b := 14
-		result := OperadorRelacional(a, b)
+		result := EMaior(a, b)
 		expected := true
 
 		if result != expected {
@@ -73,7 +73,7 @@ func TestExercicios(t *testing.T) {
 		a := 1
 		b := 4
 		c := 3
-		result := OperadorE(a, b, c)
+		result := VerificaMaior(a, b, c)
 		expected := "B é maior"
 
 		if result != expected {

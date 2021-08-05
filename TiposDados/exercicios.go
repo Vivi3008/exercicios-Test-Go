@@ -37,13 +37,13 @@ func CorFavorita(nome string, cor string) string {
 }
 
 //ex 5
-func OperadorRelacional(a, b int) bool {
+func EMaior(a, b int) bool {
 	x := a > b
 	return x
 }
 
 //ex 6
-func OperadorE(a, b, c int) string {
+func VerificaMaior(a, b, c int) string {
 	if a > b && a > c {
 		return "A é maior"
 	}
