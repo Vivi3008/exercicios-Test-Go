@@ -1,9 +1,10 @@
 package tiposdados
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestExercicios(t *testing.T) {
-
 	t.Run("Ex 1: Retorna um valor de variavel e seu tipo", func(t *testing.T) {
 		result := PrintNum(2)
 		expected := 2
