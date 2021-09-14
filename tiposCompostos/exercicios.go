@@ -37,4 +37,30 @@ func AddTwoSlices() []int16 {
 	return sliceTres
 }
 
+//ex 4
+func SliceLiteral() []string {
+	compras := []string{"Cerveja", "Chocolate", "Lasanha", "Bolacha", "Laranja"}
+
+	compras = append(compras, "Cenoura", "Beterraba", "Maça")
+
+	return compras
+}
+
+//ex 5
+func ExcluirValorMapa(maps map[string]string, cor string){
+	delete(maps, cor)
+}
+
+//ex 6
+func MesesAno(meses map[int]string) map[int]string {
+	primeiro := meses[1]
+	ultimo := meses[12]
+
+	result := map[int]string{
+		1: primeiro,
+		12 : ultimo,
+	}
+
+	return result
+}
 
