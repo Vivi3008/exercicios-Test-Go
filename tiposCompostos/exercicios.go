@@ -1,10 +1,15 @@
 package tiposcompostos
 
-type Arrays struct {
-	arrayUm []int16
-	arrayDois []int16
-	arrayTres []int16
+import "errors"
+
+type Pessoa struct {
+	Nome  string
+	Idade int16
 }
+
+var (
+	ErrEmptyTeam = errors.New("Time sem nenhum jogador")
+)
 
 //funcao ex 1
 func CriarArray() [7]string {
@@ -27,12 +32,10 @@ func SetTwoArrays() [4]string {
 
 //ex 3
 func AddTwoSlices() []int16 {
-	sliceUm :=  []int16{1,2,3,4,5,6}
-	sliceDois :=  []int16{7,8,9,10,11,12}
+	sliceUm := []int16{1, 2, 3, 4, 5, 6}
+	sliceDois := []int16{7, 8, 9, 10, 11, 12}
 
-	var sliceTres []int16
-
-	sliceTres = append(sliceUm, sliceDois...)
+	sliceTres := append(sliceUm, sliceDois...)
 
 	return sliceTres
 }
@@ -47,7 +50,7 @@ func SliceLiteral() []string {
 }
 
 //ex 5
-func ExcluirValorMapa(maps map[string]string, cor string){
+func ExcluirValorMapa(maps map[string]string, cor string) {
 	delete(maps, cor)
 }
 
@@ -57,10 +60,23 @@ func MesesAno(meses map[int]string) map[int]string {
 	ultimo := meses[12]
 
 	result := map[int]string{
-		1: primeiro,
-		12 : ultimo,
+		1:  primeiro,
+		12: ultimo,
 	}
 
 	return result
 }
 
+//ex 7
+func ImprimePessoa(pessoa Pessoa) Pessoa {
+	return pessoa
+}
+
+// ex extra 1
+func ImprimeJogadores(time []string) ([]string, error) {
+	if len(time) == 0 {
+		return []string{}, ErrEmptyTeam
+	}
+
+	return time, nil
+}

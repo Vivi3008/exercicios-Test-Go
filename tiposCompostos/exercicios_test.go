@@ -43,9 +43,9 @@ func TestExercicios(t *testing.T) {
 
 	t.Run("Ex 5 Excluir um valor de um mapa e verificar se existe", func(t *testing.T) {
 		cores := map[string]string{
-			"Azul" : "EKJ6655",
-			"Laranja" : "KJI6655",
-			"Marelo" : "54dfa54",
+			"Azul":    "EKJ6655",
+			"Laranja": "KJI6655",
+			"Marelo":  "54dfa54",
 		}
 
 		ExcluirValorMapa(cores, "Azul")
@@ -59,18 +59,18 @@ func TestExercicios(t *testing.T) {
 
 	t.Run("Ex 6 Mapa de meses do ano", func(t *testing.T) {
 		mesesAno := map[int]string{
-			1 : "Janeiro",
-			2 : "Fevereiro",
-			3 : "Março",
-			4 : "Abril",
-			5 : "Maio",
-			6 : "Junho",
-			7: "Julho",
-			8 : "Agosto",
-			9: "Setembro",
-			10 : "Outubro",
+			1:  "Janeiro",
+			2:  "Fevereiro",
+			3:  "Março",
+			4:  "Abril",
+			5:  "Maio",
+			6:  "Junho",
+			7:  "Julho",
+			8:  "Agosto",
+			9:  "Setembro",
+			10: "Outubro",
 			11: "Novembro",
-			12 : "Dezembro",
+			12: "Dezembro",
 		}
 		expected := 12
 
@@ -78,4 +78,30 @@ func TestExercicios(t *testing.T) {
 			t.Errorf("Resultado %v, esperado %v", len(mesesAno), expected)
 		}
 	})
+
+	t.Run("Ex extra 1, Array de times", func(t *testing.T) {
+		timeAmarelo := []string{"Fernando", "João", "Lúcia", "Mariana", "Ana"}
+		timeVermelho := []string{"Helena", "Jonas", "José", "Juliana"}
+
+		resultTimeAmarelo, err := ImprimeJogadores(timeAmarelo)
+
+		if err != nil {
+			t.Errorf("Expected nil, got %s", err.Error())
+		}
+
+		resultTimeVermelho, err := ImprimeJogadores(timeVermelho)
+
+		if err != nil {
+			t.Errorf("Expected nil, got %s", err.Error())
+		}
+
+		if resultTimeAmarelo[0] != "Fernando" {
+			t.Errorf("Expected %s, got %s", "Fernando", resultTimeAmarelo[0])
+		}
+
+		if resultTimeVermelho[0] != "Helena" {
+			t.Errorf("Expected %s, got %s", "Helena", resultTimeVermelho[0])
+		}
+	})
+
 }
