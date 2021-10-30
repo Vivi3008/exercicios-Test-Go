@@ -60,9 +60,25 @@ func main() {
 	timeAmarelo := []string{"Fernando", "João", "Lúcia", "Mariana", "Ana"}
 	timeVermelho := []string{"Helena", "Jonas", "José", "Juliana"}
 
+	timeVermelho = append(timeVermelho, "Luis Inácio")
+
 	timeTest, _ := tiposcompostos.ImprimeJogadores(timeAmarelo)
 	timeTestVermelho, _ := tiposcompostos.ImprimeJogadores(timeVermelho)
 
 	fmt.Printf("Time Amarelo: %v\n", timeTest)
 	fmt.Printf("Time Vermelho: %v\n", timeTestVermelho)
+
+	// ex extra 3
+	countrys := map[string]string{
+		"Goiânia":   "Brasil",
+		"São Paulo": "Brasil",
+		"Tokio":     "Japan",
+		"Lisboa":    "Portugal",
+		"New York":  "US",
+		"Nairobi":   "Quenia",
+	}
+
+	appear := tiposcompostos.AppearCountry(countrys, "Brasil")
+
+	fmt.Printf("Quantidade de vezes que aparece Brasil %v\n", appear)
 }

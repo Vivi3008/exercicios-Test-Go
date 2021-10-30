@@ -1,6 +1,8 @@
 package tiposcompostos
 
-import "errors"
+import (
+	"errors"
+)
 
 type Pessoa struct {
 	Nome  string
@@ -79,4 +81,16 @@ func ImprimeJogadores(time []string) ([]string, error) {
 	}
 
 	return time, nil
+}
+
+func AppearCountry(countrys map[string]string, country string) map[string]int {
+	appear := make(map[string]int)
+
+	for _, v := range countrys {
+		if v == country {
+			appear[country] = appear[country] + 1
+		}
+	}
+
+	return appear
 }

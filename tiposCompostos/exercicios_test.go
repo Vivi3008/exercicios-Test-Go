@@ -1,6 +1,7 @@
 package tiposcompostos
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -102,6 +103,41 @@ func TestExercicios(t *testing.T) {
 		if resultTimeVermelho[0] != "Helena" {
 			t.Errorf("Expected %s, got %s", "Helena", resultTimeVermelho[0])
 		}
+
+		// ex extra 2
+		timeVermelho = append(timeVermelho, "Luis Inácio")
+
+		resultTimeVermelho, err = ImprimeJogadores(timeVermelho)
+
+		if err != nil {
+			t.Errorf("Expected nil, got %s", err.Error())
+		}
+
+		lastPosition := len(timeVermelho) - 1
+
+		if resultTimeVermelho[lastPosition] != "Luis Inácio" {
+			t.Errorf("Expected %s, got %s", "Luis Inácio", resultTimeVermelho[lastPosition])
+		}
 	})
 
+	t.Run("Ex Extra 3", func(t *testing.T) {
+		countrys := map[string]string{
+			"Goiânia":   "Brasil",
+			"São Paulo": "Brasil",
+			"Tokio":     "Japan",
+			"Lisboa":    "Portugal",
+			"New York":  "US",
+			"Nairobi":   "Quenia",
+		}
+
+		country := "Brasil"
+
+		appear := AppearCountry(countrys, country)
+
+		fmt.Printf("Appear %v", appear)
+
+		if appear[country] != 2 {
+			t.Errorf("Expected %v, got %v", 2, appear[country])
+		}
+	})
 }
