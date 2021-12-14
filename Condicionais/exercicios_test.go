@@ -20,4 +20,13 @@ func TestExerciciosCondicionais(t *testing.T) {
 		}
 	})
 
+	t.Run("Ex. 3 Verificar idade de uma pessoa", func(t *testing.T) {
+		ageText := "Maior de idade"
+		rangeAge := VerifyAge(36)
+
+		if rangeAge != ageText {
+			t.Errorf("Age expected %s, got %s", ageText, rangeAge)
+		}
+	})
+
 }

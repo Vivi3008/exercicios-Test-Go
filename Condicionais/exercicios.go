@@ -13,3 +13,13 @@ func MaiorIdade(nascimento int) bool {
 func Positivo(num int) bool {
 	return num > 0
 }
+
+func VerifyAge(age int) string {
+	if age < 18 {
+		return "Menor de idade"
+	} else if age >= 18 && age <= 60 {
+		return "Maior de idade"
+	} else {
+		return "Idoso"
+	}
+}
