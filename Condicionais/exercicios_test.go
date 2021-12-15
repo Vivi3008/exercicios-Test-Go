@@ -29,4 +29,42 @@ func TestExerciciosCondicionais(t *testing.T) {
 		}
 	})
 
+	t.Run("Ex. 4 Verificar idade usando Switch", func(t *testing.T) {
+		ageText := "Idoso"
+		rangeAge := VerifyAgeSwitch(85)
+
+		if rangeAge != ageText {
+			t.Errorf("Expected %s, got %s", ageText, rangeAge)
+		}
+	})
+
+	t.Run("Ex. 5 Verificar período do dia", func(t *testing.T) {
+		hour := 17
+		period := VerifyDayPeriod(hour)
+
+		if period != "Tarde" {
+			t.Errorf("Expected %s, got %s", "Tarde", period)
+		}
+	})
+
+	t.Run("Ex Extra 1 Maior valor", func(t *testing.T) {
+		x := 9
+		y := 8
+		z := -10
+
+		maior := CheckBigger(x, y, z)
+
+		if maior != x {
+			t.Errorf("Expected %v, got %v", x, maior)
+		}
+	})
+
+	t.Run("Ex Extra 2 Multiplos", func(t *testing.T) {
+		muliple := CheckMultiple(12)
+		txt := "Multiplo de 2"
+
+		if muliple != txt {
+			t.Errorf("Expected %v, got %v", txt, muliple)
+		}
+	})
 }
