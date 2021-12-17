@@ -10,13 +10,29 @@ func NumberSequence(begin int, end int) []int {
 	return numbers
 }
 
-func DayHours() []int {
+func DayHours() ([]int, []int) {
 	hours := make([]int, 0)
+	minutes := make([]int, 0)
 
-	for i := 0; i <= 24; {
+	for i := 0; i < 24; {
 		hours = append(hours, i)
+		for m := 0; m < 60; m++ {
+			minutes = append(minutes, m)
+		}
 		i++
 	}
 
-	return hours
+	return hours, minutes
+}
+
+func SliceString() []string {
+	strings := []string{"um", "dois", "tres", "quatro", "cinco"}
+
+	return strings
+}
+
+func ShopList() []string {
+	list := []string{"Arroz", "Carne", "Chocolate", "Chicletes", "Verduras", "Refrigerante"}
+
+	return list
 }
