@@ -1,6 +1,9 @@
 package lacosRepeticao
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestExerciciosLacosRepeticao(t *testing.T) {
 	t.Run("Ex. 1 Imprimir numeros usando for", func(t *testing.T) {
@@ -45,6 +48,17 @@ func TestExerciciosLacosRepeticao(t *testing.T) {
 
 		if list[0] != "Arroz" {
 			t.Errorf("Expected Arroz, got %v", list[0])
+		}
+	})
+
+	t.Run("Ex. Extra 1 percorrer slice", func(t *testing.T) {
+		list := ShopList()
+
+		for i := 0; i < len(list); i++ {
+			fmt.Println(list[i])
+			if list[0] != "Arroz" {
+				t.Errorf("Expected Arroz, got %s", list[0])
+			}
 		}
 	})
 }

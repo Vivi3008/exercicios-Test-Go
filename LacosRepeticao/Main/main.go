@@ -31,4 +31,11 @@ func main() {
 	for i, v := range list {
 		fmt.Println(i+1, v)
 	}
+
+	//ex extra1
+	for i := 0; i < len(list); i++ {
+		fmt.Println(i+1, list[i])
+	}
+	//ex extra 3
+	lacosRepeticao.PrintValues()
 }

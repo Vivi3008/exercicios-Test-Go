@@ -1,5 +1,7 @@
 package lacosRepeticao
 
+import "fmt"
+
 func NumberSequence(begin int, end int) []int {
 	numbers := make([]int, 0)
 
@@ -35,4 +37,12 @@ func ShopList() []string {
 	list := []string{"Arroz", "Carne", "Chocolate", "Chicletes", "Verduras", "Refrigerante"}
 
 	return list
+}
+
+func PrintValues() {
+	arr := []int{}
+	for i := 1; i <= 10; i++ {
+		arr = append(arr, i)
+		fmt.Printf("%v\n", arr)
+	}
 }
