@@ -38,4 +38,10 @@ func main() {
 	}
 	//ex extra 3
 	lacosRepeticao.PrintValues()
+	//ex extra 2
+	lacosRepeticao.PrintApes()
+	// ex extra 4
+	lacosRepeticao.LerNumeroPar()
+	//ex extra 5
+	lacosRepeticao.VerifyLetters()
 }
