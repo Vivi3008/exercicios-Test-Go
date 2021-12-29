@@ -19,4 +19,10 @@ func main() {
 	list := met.ListNumbers{4, 6, 8, 9, 4, 5, 7, 10}
 	fmt.Printf("Soma da lista %v\n", list.CalcSoma())
 	fmt.Printf("Media da lista %.2f\n", list.CalcMedia())
+
+	//ex extra 1
+	firsPilha := met.Pilha{1, 2, 3, 4}
+	result := met.Pilha(firsPilha.Push(5))
+	fmt.Printf("Adicionando um item a pilha %v\n", result)
+	fmt.Printf("Removendo o ultimo item %v\n", result.Pop())
 }

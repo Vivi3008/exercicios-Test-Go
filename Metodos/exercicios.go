@@ -1,6 +1,8 @@
 package metodos
 
-import "math"
+import (
+	"math"
+)
 
 // ex 1
 type Circle struct {
@@ -34,4 +36,23 @@ func (l ListNumbers) CalcMedia() float64 {
 	media := float64(l.CalcSoma()) / float64(len(l))
 
 	return media
+}
+
+//ex extra 1
+type Pilha []int
+
+func (p Pilha) Push(value int) []int {
+	p = append(p, value)
+
+	return p
+}
+
+func (p Pilha) Pop() []int {
+	var res []int
+	for i, v := range p {
+		if len(p)-1 != i {
+			res = append(res, v)
+		}
+	}
+	return res
 }
