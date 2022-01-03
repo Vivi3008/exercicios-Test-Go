@@ -25,4 +25,12 @@ func main() {
 	result := met.Pilha(firsPilha.Push(5))
 	fmt.Printf("Adicionando um item a pilha %v\n", result)
 	fmt.Printf("Removendo o ultimo item %v\n", result.Pop())
+
+	//ex extra 2
+	var cpf met.CPF = "11144477735"
+	cpfValid, _ := cpf.ValidaCpf()
+
+	if len(cpfValid) != 0 {
+		fmt.Printf("Esse cpf é valido\n")
+	}
 }
