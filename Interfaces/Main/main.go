@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	interfaces "github.com/Vivi3008/exercicios-Test-Go/Interfaces"
 )
@@ -32,4 +33,20 @@ func main() {
 
 	fmt.Println(interfaces.ApresentaAnimal(cat))
 	fmt.Println(interfaces.ApresentaAnimal(dog))
+
+	//ex extra 1
+	ps := interfaces.Person{
+		Name:   "Eu",
+		Age:    35,
+		Gender: "Feminino",
+	}
+
+	myFileOs, _ := os.OpenFile("../teste.json", os.O_RDONLY, os.ModeDevice)
+
+	myFile := interfaces.DataJson{
+		Data: *myFileOs,
+	}
+
+	interfaces.PrintInfo(ps)
+	interfaces.PrintInfo(myFile)
 }

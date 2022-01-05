@@ -2,7 +2,9 @@ package interfaces
 
 import (
 	"fmt"
+	"io/ioutil"
 	"math"
+	"os"
 )
 
 //ex 1
@@ -58,4 +60,33 @@ func (g Gato) apresenta() string {
 
 func ApresentaAnimal(a Animal) string {
 	return a.apresenta()
+}
+
+//ex extra 1
+
+type DataJson struct {
+	Data os.File
+}
+
+type Person struct {
+	Name   string
+	Age    int
+	Gender string
+}
+
+type Print interface {
+	printContent()
+}
+
+func (d DataJson) printContent() {
+	content, _ := ioutil.ReadAll(&d.Data)
+	fmt.Printf("%v\n", string(content))
+}
+
+func (p Person) printContent() {
+	fmt.Printf("Nome: %s | Idade: %v | Sexo: %s\n", p.Name, p.Age, p.Gender)
+}
+
+func PrintInfo(p Print) {
+	p.printContent()
 }
