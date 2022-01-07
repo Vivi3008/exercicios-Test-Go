@@ -49,4 +49,26 @@ func main() {
 
 	interfaces.PrintInfo(ps)
 	interfaces.PrintInfo(myFile)
+
+	//ex extra 2
+	resInt, err := interfaces.PrintType(int32(45))
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(resInt)
+	}
+	resFloat, err := interfaces.PrintType(float32(45.1))
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(resFloat)
+	}
+	resStr, err := interfaces.PrintType("oi")
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(resStr)
+	}
 }
