@@ -94,16 +94,17 @@ func PrintInfo(p Print) {
 
 //ex extra 2
 func PrintType(i interface{}) (string, error) {
-	f, okFloat := i.(float32)
-	i, ok := i.(int32)
+	var result string
+	var err error
 
-	if okFloat {
-		return fmt.Sprintf("Tipo float %v", f), nil
+	switch i.(type) {
+	case int32:
+		result = fmt.Sprintf("Tipo int %d", i)
+	case float32:
+		result = fmt.Sprintf("Tipo float %.2f", i)
+	default:
+		err = errors.New("invalid Type")
 	}
 
-	if ok {
-		return fmt.Sprintf("Tipo int %v", i), nil
-	}
-
-	return "", errors.New("invalid Type")
+	return result, err
 }
